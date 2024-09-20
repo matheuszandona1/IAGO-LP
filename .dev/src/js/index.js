@@ -251,9 +251,86 @@ ScrollTrigger.create({
 	pin: true,
 })
 
-ScrollTrigger.create({
-	trigger: "#orange",
-	start: "top top",
-	end: "bottom -50px",
-	pin: "#orange-content",
+gsap.from(".rounded-block", {
+	duration: 1,
+	y: "-30vh",
+	ease: "power2.in",
+})
+
+gsap.from(".iago", {
+	duration: 1,
+	y: "-50vh",
+	ease: "power",
+})
+
+if (window.innerWidth > 768) {
+	// Aqui você define o breakpoint (768px é um valor comum)
+	gsap.to("#card-container", {
+		scrollTrigger: {
+			trigger: "#card-container",
+			start: "-100 center",
+			end: "250 center",
+
+			toggleActions: "restart pause reverse pause",
+			scrub: true,
+		},
+		x: -1200,
+		duration: 3,
+	})
+
+	gsap.from(".arm", {
+		scrollTrigger: {
+			trigger: ".arm",
+			start: "-160 center",
+			end: "80 center",
+
+			toggleActions: "restart pause reverse pause",
+			scrub: true,
+		},
+		x: -600,
+		y: -100,
+		duration: 3,
+	})
+
+	gsap.from(".iago-solo", {
+		scrollTrigger: {
+			trigger: ".iago-solo",
+			start: "-500 center",
+			end: "-300 center",
+
+			toggleActions: "restart pause reverse pause",
+			scrub: true,
+		},
+		x: 400,
+		y: 300,
+		duration: 3,
+	})
+	gsap.utils.toArray(".button--container").forEach((button) => {
+		gsap.from(button, {
+			scrollTrigger: {
+				trigger: button,
+				start: "-600 center",
+				end: "-300 center",
+
+				toggleActions: "restart pause reverse pause",
+				scrub: true,
+				ease: "power",
+			},
+			y: 300,
+			duration: 3,
+		})
+	})
+}
+
+gsap.from(".demo-img", {
+	scrollTrigger: {
+		trigger: ".demo-img",
+		start: "-100 center",
+		end: "100 center",
+
+		toggleActions: "restart pause reverse pause",
+		scrub: true,
+	},
+	x: 400,
+	duration: 3,
 })

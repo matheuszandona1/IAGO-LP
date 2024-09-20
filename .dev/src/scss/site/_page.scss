@@ -12,6 +12,9 @@
 				max-width: 100%;
 				height: auto;
 			}
+			@include media(s) {
+				margin-bottom: 40px;
+			}
 		}
 		.splited-block {
 			margin-bottom: 200px;
@@ -77,6 +80,7 @@
 .benefits {
 	padding: 120px 0;
 	overflow: hidden;
+	background-color: var(--neutro-50);
 	@include media(s) {
 		padding: 40px 0;
 	}
@@ -91,6 +95,7 @@
 		}
 		margin-bottom: 40px;
 		@include media(s) {
+			padding: 0 24px;
 			text-align: left;
 			br {
 				display: none;
@@ -110,15 +115,20 @@
 		}
 		@include media(s) {
 			text-align: left;
+			padding: 0 24px;
 		}
 	}
 	.content {
 		display: flex;
 		gap: 56px;
 		margin: 56px auto;
-		flex-wrap: wrap;
 		max-width: 100%;
 		padding-left: 120px;
+		@include media(s) {
+			padding: 0 24px;
+			overflow: auto;
+			gap: 24px;
+		}
 	}
 	.card {
 		border: none;
@@ -128,6 +138,9 @@
 		max-width: 362px;
 		border-radius: 0;
 		padding-bottom: 48px;
+		@include media(s) {
+			max-width: 300px;
+		}
 		&-icon {
 			background-color: var(--pink);
 			display: inline-block;
@@ -157,13 +170,35 @@
 }
 
 .integration {
+	background-color: var(--neutro-50);
+
 	padding-bottom: 120px;
 	@include media(s) {
 		padding-bottom: 40px;
 	}
 	.container {
+		position: relative;
+		overflow: hidden;
 		@include media(s) {
 			padding: 0;
+		}
+		.arm,
+		.iago-solo {
+			position: absolute;
+			bottom: -100px;
+			@include media(s) {
+				display: none;
+			}
+		}
+
+		.arm {
+			left: -88px;
+			transform: scale(1.15);
+		}
+		.iago-solo {
+			right: 173px;
+			bottom: unset;
+			top: 238px;
 		}
 	}
 	.pink-block {
@@ -198,7 +233,9 @@
 			position: absolute;
 			left: 0;
 			bottom: -100px;
+			display: none;
 			@include media(s) {
+				display: block;
 				bottom: -22px;
 			}
 		}
@@ -440,6 +477,7 @@
 	position: relative;
 	background-color: var(--neutro-50);
 	z-index: 3;
+	overflow: hidden;
 	@include media(s) {
 		padding: 40px 0;
 	}
