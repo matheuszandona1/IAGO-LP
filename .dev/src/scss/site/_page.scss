@@ -194,11 +194,18 @@
 		.arm {
 			left: -88px;
 			transform: scale(1.15);
+			@media (min-width: 1600px) {
+				transform: scale(1);
+				left: 0px;
+			}
 		}
 		.iago-solo {
 			right: 173px;
 			bottom: unset;
 			top: 238px;
+			@media (min-width: 1600px) {
+				right: 132px;
+			}
 		}
 	}
 	.pink-block {
@@ -209,6 +216,7 @@
 		color: var(--neutro-50);
 		margin-bottom: 120px;
 		position: relative;
+
 		@include media(s) {
 			padding: 24px 24px 100px 24px;
 			margin-bottom: 60px;

@@ -263,6 +263,22 @@ gsap.from(".iago", {
 	ease: "power",
 })
 
+if (window.innerwidth > 768 || window.innerWidth < 1920) {
+	gsap.from(".arm", {
+		scrollTrigger: {
+			trigger: ".arm",
+			start: "-160 center",
+			end: "80 center",
+
+			toggleActions: "restart pause reverse pause",
+			scrub: true,
+		},
+		x: -600,
+		y: -100,
+		duration: 3,
+	})
+}
+
 if (window.innerWidth > 768) {
 	// Aqui você define o breakpoint (768px é um valor comum)
 	gsap.to("#card-container", {
@@ -275,20 +291,6 @@ if (window.innerWidth > 768) {
 			scrub: true,
 		},
 		x: -1200,
-		duration: 3,
-	})
-
-	gsap.from(".arm", {
-		scrollTrigger: {
-			trigger: ".arm",
-			start: "-160 center",
-			end: "80 center",
-
-			toggleActions: "restart pause reverse pause",
-			scrub: true,
-		},
-		x: -600,
-		y: -100,
 		duration: 3,
 	})
 
